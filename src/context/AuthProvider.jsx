@@ -11,13 +11,13 @@ export default function AuthProvider({ children }) {
   useEffect(() => {
     const { employees, admin } = getLocalStorage();
     setInterval(() => {
-      setUserData({ employees, admin });
+      setUserData({ employees });
     }, 100);
   }, []);
 
   return (
     <div>
-      <AuthContext.Provider value={userData}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={[userData, setUserData]}>{children}</AuthContext.Provider>
     </div>
   );
 }

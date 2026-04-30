@@ -2,13 +2,13 @@ import Header from "../Others/Header";
 import TaskListNumbers from "../Others/TaskListNumbers";
 import TaskList from "../TaskList/TaskList";
 
-export default function EmployeeDashboard() {
+export default function EmployeeDashboard(props) {
+  
   return (
     <div className="p-10 bg-[#1C1C1C] h-screen">
-      <Header />
-      <TaskListNumbers />
-      
-      <TaskList />
+      <Header data={props.data} changedUser={props.changedUser} />
+      <TaskListNumbers data={props.data} />
+      <TaskList data={props.data} />
     </div>
   )
 }
